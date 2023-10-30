@@ -1,0 +1,14 @@
+{% for game in games %}
+  <tr>
+    <td>{{ game.id }}</td>
+    <td>{{ game.black }}</td>
+    <td>{{ game.white }}</td>
+    <td>{{ game.result }}</td>
+    <td>
+      <form hx-post="accept-game" hx-target="#games" hx-swap="#games">
+        <input type="submit" value="Accept">
+        <input name="game_id" type="hidden" value="{{ game.id }}">
+      </form>
+    </td>
+  </tr>
+{% endfor %}

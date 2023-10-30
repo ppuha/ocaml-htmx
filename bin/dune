@@ -1,0 +1,5 @@
+(executable
+ (public_name ml_htmx)
+ (name main)
+ (libraries storage dream lwt jingoo uuidm)
+ (preprocess (pps lwt_ppx)))

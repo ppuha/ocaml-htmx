@@ -1,0 +1,21 @@
+{% include "templates/partials/header.html" %}
+
+<div>
+  <p>Player: {{ player }}</p>
+</div>
+
+<form hx-post="/new-game" hx-target="#games" hx-swap="#games">
+  <button type="submit">New Game</button> 
+</form>
+
+<table class="table">
+  <thead>
+    <th>ID</th>
+    <th>Black</th>
+    <th>White</th>
+    <th>Result</th>
+  </thead>
+  <tbody id="games">
+    {% include "templates/partials/games.html" %}
+  </tbody>
+</table/>
