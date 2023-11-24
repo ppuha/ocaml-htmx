@@ -15,7 +15,6 @@
     <th>White</th>
     <th>Result</th>
   </thead>
-  <tbody id="games">
-    {% include "templates/partials/games.html" %}
+  <tbody id="games" hx-get="/games" hx-trigger="load">
   </tbody>
 </table/>

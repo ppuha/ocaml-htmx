@@ -1,5 +1,11 @@
+type id = Uuidm.t
+
+let gen_id () = Uuidm.v `V4
+let id_of_string str = Uuidm.of_string str |> Option.value ~default:Uuidm.nil
+let string_of_id id = Uuidm.to_string id
+
 type t = {
-  id: Uuidm.t;
+  id: id;
   black: Player.t option;
   white: Player.t option;
   result: string;
